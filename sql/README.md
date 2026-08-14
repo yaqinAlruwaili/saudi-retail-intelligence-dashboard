@@ -16,16 +16,20 @@ The data warehouse is stored in SQL Server under the `RetailAnalyticsDW_v2` data
 
 ## Data Pipeline
 
-Most of the data preparation and warehouse loading was performed using Python.
+The data preparation, warehouse construction, and SQL Server loading were performed using Python.
 
 The workflow includes:
 
 1. Raw retail data was loaded and cleaned using Python.
 2. Business rules and analytical features were generated using Python.
 3. Dimension tables were created using Python.
-4. The FactSales table was built using Python.
-5. The resulting warehouse tables were exported to SQL Server.
+4. The `FactSales` table was built using Python.
+5. The SQL Server database tables were created and populated using Python with `pyodbc`.
 6. SQL Server was used to store, query, and validate the final warehouse.
+
+The main warehouse loading process is implemented in:
+
+`notebooks/06_Load_Data_to_SQL_Server.ipynb`
 
 ## SQL Validation
 
@@ -51,6 +55,12 @@ FROM DimDate;
 
 SELECT COUNT(*) AS ProductRows
 FROM DimProduct;
+
+SELECT COUNT(*) AS CustomerRows
+FROM DimCustomer;
+
+SELECT COUNT(*) AS SalesRows
+FROM FactSales;
 
 SELECT COUNT(*) AS CustomerRows
 FROM DimCustomer;
