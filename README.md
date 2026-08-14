@@ -72,7 +72,7 @@ The project uses a **Star Schema** data warehouse designed for analytical report
 
 The Power BI model connects the central `FactSales` table with the main dimension tables:
 
-![Data Model](data-model.png)
+![Data Model](Data-model.png)
 
 ### Fact Table
 
