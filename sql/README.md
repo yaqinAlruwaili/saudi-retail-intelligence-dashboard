@@ -45,6 +45,9 @@ Validation included:
 Example validation queries:
 
 ```sql
+CREATE DATABASE RetailAnalyticsDW_v2:
+USE RetailAnalyticsDW_v2;
+
 SELECT DB_NAME() AS CurrentDatabase;
 
 SELECT COUNT(*) AS CountryRows
