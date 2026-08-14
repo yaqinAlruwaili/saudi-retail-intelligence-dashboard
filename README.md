@@ -68,6 +68,12 @@ The project follows an end-to-end data analytics workflow:
 
 The project uses a **Star Schema** data warehouse designed for analytical reporting.
 
+### Data Model
+
+The Power BI model connects the central `FactSales` table with the main dimension tables:
+
+![Data Model](data-model.png)
+
 ### Fact Table
 
 - `FactSales`
