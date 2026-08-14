@@ -71,6 +71,9 @@ The model was designed to support efficient analytical queries and Power BI repo
 
 The project follows an end-to-end analytics pipeline that transforms raw transactional data into a structured analytical data warehouse and interactive business dashboards.
 
+أي يصبح الجزء كاملًا:
+
+```text
 ```text
 Raw Retail Dataset
         │
@@ -95,7 +98,7 @@ Raw Retail Dataset
 │ Business rules          │
 │ Sales & profit metrics  │
 │ Customer features       │
-│ Product features       │
+│ Product features        │
 └────────────┬────────────┘
              │
              ▼
@@ -139,7 +142,7 @@ Raw Retail Dataset
 └────────────┬────────────┘
              │
              ▼
-       Business Insights 
+       Business Insights
 ---
 
 ## 🧹 Data Preparation
@@ -289,6 +292,23 @@ The dashboards are designed to answer questions such as:
 saudi-retail-intelligence-dashboard/
 │
 ├── README.md
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── warehouse/
+│
+├── notebooks/
+│   ├── 01_Load_Data.ipynb
+│   ├── 02_Data_Cleaning.ipynb
+│   ├── 03_Feature_Engineering.ipynb
+│   ├── 04_Generate_Dimensions.ipynb
+│   ├── 05_Build_FactSales.ipynb
+│   └── 06_Load_SQL_pyodbc.ipynb
+│
+├── sql/
+│   ├── 01_Validation.sql
+│   └── README.md
 │
 ├── executive-dashboard.png
 ├── sales-performance-dashboard.png
