@@ -67,6 +67,79 @@ The project uses a **star schema** data warehouse.
 
 The model was designed to support efficient analytical queries and Power BI reporting.
 
+## 🔄 End-to-End Data Pipeline
+
+The project follows an end-to-end analytics pipeline that transforms raw transactional data into a structured analytical data warehouse and interactive business dashboards.
+
+```text
+Raw Retail Dataset
+        │
+        ▼
+┌─────────────────────────┐
+│ 1. Load Raw Data        │
+│ Python / Pandas         │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 2. Data Cleaning        │
+│ Missing values          │
+│ Duplicates              │
+│ Invalid transactions    │
+│ Cancelled orders        │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 3. Feature Engineering  │
+│ Business rules          │
+│ Sales & profit metrics  │
+│ Customer features       │
+│ Product features       │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 4. Build Dimensions     │
+│ DimDate                 │
+│ DimCustomer             │
+│ DimProduct              │
+│ DimCountry              │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 5. Build Fact Table     │
+│ FactSales               │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 6. SQL Server Warehouse │
+│ RetailAnalyticsDW_v2    │
+│ Star Schema             │
+│ Loaded using Python     │
+│ with pyodbc             │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 7. SQL Validation       │
+│ Row counts              │
+│ Database verification   │
+│ Warehouse validation    │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│ 8. Power BI             │
+│ Data Modeling           │
+│ DAX Measures            │
+│ Interactive Dashboards  │
+└────────────┬────────────┘
+             │
+             ▼
+       Business Insights 
 ---
 
 ## 🧹 Data Preparation
